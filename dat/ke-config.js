@@ -5,7 +5,7 @@ config file for Kenya Zendesk set up
 
 module.exports = opts;
 
-opts = {
+var opts = {
     'url' : null,
     'data_packer' : data_packer,
     'ticket_table' : 'CallBackUSSD', // placeholder for now - needs update
