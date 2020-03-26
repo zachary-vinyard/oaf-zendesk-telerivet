@@ -9,7 +9,7 @@ module.exports = {
     'data_packer' : data_packer
 };
 
-var data_packer = function(an, cc){ //placeholder for now needs update when available
+var data_packer = function(account_number, call_category){ //placeholder for now needs update when available
     return {
         'ticket' : {
             'account_number' : account_number,
