@@ -10,7 +10,7 @@ module.exports = {
     'ticket_table' : 'ticket_table_name' // placeholder for now - needs update
 };
 
-var data_packer = function(account_number, call_category){ //placeholder for now needs update when available
+var data_packer = data_packer = function(account_number, call_category, phone_number){ //placeholder for now needs update when available
     return {
         'ticket' : {
             'account_number' : account_number,
