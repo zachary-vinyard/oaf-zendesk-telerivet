@@ -28,7 +28,6 @@ var data_packer = function(account_number, call_category, phone_number){ //place
 var find_user = function(account_number){
     var response = httpClient.request(opts.url + '/users.json?query=account_number:' + account_number, {
         method : "GET",
-        data : dat,
         basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
     });
     if(response.status < 200){
