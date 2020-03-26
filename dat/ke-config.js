@@ -49,5 +49,5 @@ var find_user = function(account_number){
 
 var table_updater = function(account_number, call_category, phone_number){
     var ticket_table = getOrCreateDataTable(opts.ticket_table);
-    ticket_table.createRow(vars : {'account_number' : account_number, 'call_category' : call_category, 'phone_number' : phone_number});
+    ticket_table.createRow({vars : {'account_number' : account_number, 'call_category' : call_category, 'phone_number' : phone_number}});
 };
