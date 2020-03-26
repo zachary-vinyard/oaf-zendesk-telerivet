@@ -4,5 +4,5 @@ config file for Rwanda Zendesk set up
 */
 
 module.exports = {
-    opts : null
+    'url' : 'https://oneacrefund-rw.zendesk.com/api/v2',
 };

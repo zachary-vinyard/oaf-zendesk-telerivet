@@ -4,5 +4,5 @@ config file for Kenya Zendesk set up
 */
 
 module.exports = {
-    opts : null
+    'url' : null
 };
