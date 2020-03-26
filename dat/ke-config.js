@@ -8,7 +8,7 @@ module.exports = opts;
 opts = {
     'url' : null,
     'data_packer' : data_packer,
-    'ticket_table' : 'ticket_table_name', // placeholder for now - needs update
+    'ticket_table' : 'CallBackUSSD', // placeholder for now - needs update
     'update_table' : true,
     'table_updater' : table_updater
 };
