@@ -4,5 +4,10 @@ config file for Kenya Zendesk set up
 */
 
 module.exports = {
-    'url' : null
+    'url' : null,
+    'data_packer' : data_packer
+};
+
+var data_packer = function(an, cc){ //placeholder for now - needs update once available
+    return {'account_number' : account_number, 'call_category': call_category}
 };
