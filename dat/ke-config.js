@@ -8,7 +8,7 @@ module.exports = opts;
 var opts = {
     'url' : null,
     'data_packer' : data_packer,
-    'ticket_table' : 'CallBackUSSD', // placeholder for now - needs update
+    'ticket_table' : 'CallBackUSSD', //true as of 26 mar 2020
     'update_table' : true,
     'table_updater' : table_updater
 };
