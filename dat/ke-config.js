@@ -3,7 +3,9 @@ config file for Kenya Zendesk set up
 **Store API key as project variable in Telerivet. do no store here.**
 */
 
-module.exports = {
+module.exports = opts;
+
+opts = {
     'url' : null,
     'data_packer' : data_packer,
     'ticket_table' : 'ticket_table_name', // placeholder for now - needs update
@@ -40,6 +42,7 @@ var find_user = function(account_number){
     }
 };
 
-var table_updater = function(account_number, call_category){
-    //placeholder for now
+var table_updater = function(account_number, call_category, phone_number){
+    var ticket_table = getOrCreateDataTable(opts.ticket_table);
+    ticket_table.createRow(vars : {'account_number' : account_number, 'call_category' : call_category, 'phone_number' : phone_number});
 };
