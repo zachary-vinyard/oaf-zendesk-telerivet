@@ -13,18 +13,23 @@ opts = {
     'table_updater' : table_updater
 };
 
-var data_packer = function(account_number, call_category, phone_number){ //placeholder for now - needs update once available
-    return {
-        'ticket' : {
-            'subject' : call_category,
-            'raw_subject' : call_category,
-            'requester_id' : find_user(account_number),
-            'status' : 'open',
-            'custom_fields' : [
-                {'id' : 360010566873, 'value' : phone_number},
-            ],
-        }
-    };
+var data_packer = function(account_number, call_category, phone_number){
+    try{
+        return {
+            'ticket' : {
+                'subject' : call_category,
+                'raw_subject' : call_category,
+                'requester_id' : find_user(account_number),
+                'status' : 'open',
+                'custom_fields' : [
+                    {'id' : 360010566873, 'value' : phone_number},
+                ],
+            }
+        };
+    }
+    catch(error){
+        console.log(error)
+    }
 };
 
 var find_user = function(account_number){
