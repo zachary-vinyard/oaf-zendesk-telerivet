@@ -28,7 +28,7 @@ var data_packer = function(account_number, call_category, phone_number){
         };
     }
     catch(error){
-        console.log(error)
+        console.log(error) // placeholder for now so that we don't crash things when it happens
     }
 };
 
@@ -41,7 +41,7 @@ var find_user = function(account_number){
         console.log('got a user!!' + response.status);
         return response.content.users[0].id;
     }
-    if(response.status > 400){
+    else if(response.status > 400){
         console.log(response.status);
         return null;
     }
