@@ -15,13 +15,13 @@ var find_user = function(account_number){
     }
     else if(response.status > 300){
         console.log('failed at find user ' + response.status +'/ncreating blank user');
-        let id = create_user(account_number)
+        let id = create_user(account_number);
         return id;
     }
 };
 
 var create_user = function(account_number){
-    console.log("createing a user")
+    console.log("createing a user");
     var response = httpClient.request(opts.url + '/users.json?query=account_number:' + account_number, {
         method : "POST",
         data : {
