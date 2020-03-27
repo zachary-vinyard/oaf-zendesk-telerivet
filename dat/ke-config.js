@@ -25,7 +25,7 @@ var find_user = function(account_number){
     }
     else{
         console.log('failed at find user ' + response.status +'/ncreating blank user');
-        console.log(JSON.stringify(response.content));
+        //console.log(JSON.stringify(response.content));
         var id = create_user(account_number);
         return id;
     }
