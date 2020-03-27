@@ -3,14 +3,6 @@ config file for Kenya Zendesk set up
 **Store API key as project variable in Telerivet. do no store here.**
 */
 
-var opts = {
-    'url' : "https://oneacrefund-ke.zendesk.com/api/v2",
-    'data_packer' : data_packer,
-    'ticket_table' : 'CallBackUSSD', //true as of 26 mar 2020
-    'update_table' : true,
-    'table_updater' : table_updater
-};
-
 var data_packer = function(account_number, call_category, phone_number){
     try{
         return {
@@ -48,6 +40,14 @@ var find_user = function(account_number){
 var table_updater = function(account_number, call_category, phone_number, ticket_id){
     var ticket_table = getOrCreateDataTable(opts.ticket_table);
     ticket_table.createRow({vars : {'account_number' : account_number, 'call_category' : call_category, 'phone_number' : phone_number, 'ticket_id' : ticket_id}});
+};
+
+var opts = {
+    'url' : "https://oneacrefund-ke.zendesk.com/api/v2",
+    'data_packer' : data_packer,
+    'ticket_table' : 'CallBackUSSD', //true as of 26 mar 2020
+    'update_table' : true,
+    'table_updater' : table_updater
 };
 
 module.exports = opts;
