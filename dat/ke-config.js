@@ -37,6 +37,7 @@ var create_user = function(account_number){
         method : "POST",
         data : JSON.stringify({
             'name' : 'no id known',
+            'role' : 'end-user',
             'user_fields' : {
                 'account_number' : account_number
             }
