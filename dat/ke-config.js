@@ -10,10 +10,16 @@ var find_user = function(account_number){
         method : "GET",
         basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
     });
-    if(response.status < 300){
+    try{
+        var users = JSON.parse(response.content).users;
+    }
+    catch(err){
+        console.log(err)
+        users = [];
+    }
+    if(response.status < 300 & users.length > 0){
         console.log('got a user!!' + response.status);
-        console.log(response.content);
-        var id = JSON.parse(response.content).users[0].id;
+        var id = users[0].id;
         console.log(id)
         return id;
     }
