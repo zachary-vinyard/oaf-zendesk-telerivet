@@ -37,7 +37,7 @@ var create_user = function(account_number){
     }
     else if(response.status > 300){
         console.log('failed at find user ' + response.status +'/ncreating blank user');
-        return create_user(account_number);
+        return null;
     }
 }
 
