@@ -12,7 +12,7 @@ var find_user = function(account_number){
     });
     if(response.status < 300){
         console.log('got a user!!' + response.status);
-        //console.log(JSON.stringify(response.content));
+        console.log(response.content);
         var id = JSON.parse(response.content).users[0].id;
         console.log(id)
         return id;
