@@ -21,7 +21,7 @@ var find_user = function(account_number){
 };
 
 var create_user = function(account_number){
-    console.log(createing a user)
+    console.log("createing a user")
     var response = httpClient.request(opts.url + '/users.json?query=account_number:' + account_number, {
         method : "POST",
         data : {
