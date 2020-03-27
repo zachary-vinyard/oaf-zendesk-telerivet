@@ -20,7 +20,7 @@ var find_user = function(account_number){
     if(response.status < 300 & users.length > 0){
         console.log('got a user!!' + response.status);
         var id = users[0].id;
-        console.log(id)
+        //console.log(id)
         return id;
     }
     else{
@@ -30,8 +30,7 @@ var find_user = function(account_number){
     }
 };
 
-
-//don't use this
+/* works but don't use because we don't want to add unknown users to database
 var create_user = function(account_number){
     console.log("createing a user");
     user_dat = JSON.stringify({
@@ -61,6 +60,7 @@ var create_user = function(account_number){
         return null;
     }
 }
+*/
 
 var data_packer = function(account_number, call_category, phone_number){
     try{
