@@ -5,6 +5,7 @@ config file for Kenya Zendesk set up
 
 //finds a user on KE zendesk. now should create if one is not there
 var find_user = function(account_number){
+    console.log(opts.url)
     var response = httpClient.request(opts.url + '/users.json?query=account_number:' + account_number, {
         method : "GET",
         basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
