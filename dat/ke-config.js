@@ -50,5 +50,4 @@ var table_updater = function(account_number, call_category, phone_number, ticket
     ticket_table.createRow({vars : {'account_number' : account_number, 'call_category' : call_category, 'phone_number' : phone_number, 'ticket_id' : ticket_id}});
 };
 
-
 module.exports = opts;
