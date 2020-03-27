@@ -32,7 +32,7 @@ var find_user = function(account_number){
         return response.content.users[0].id;
     }
     else if(response.status > 300){
-        console.log(response.status);
+        console.log('failed at find user ' + response.status);
         return null;
     }
 };
