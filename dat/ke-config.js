@@ -12,11 +12,12 @@ var find_user = function(account_number){
     });
     if(response.status < 300 & response.status> 200){
         console.log('got a user!!' + response.status);
-        console.log(JSON.stringify(response.content.users));
+        console.log(JSON.stringify(response.content));
         return response.content.users[0].id;
     }
     else{
         console.log('failed at find user ' + response.status +'/ncreating blank user');
+        console.log(JSON.stringify(response.content));
         var id = create_user(account_number);
         return id;
     }
