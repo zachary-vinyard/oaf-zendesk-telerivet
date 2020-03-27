@@ -52,7 +52,7 @@ var create_user = function(account_number){
     });
     if(response.status < 300){
         console.log('created a user!!' + response.status);
-        console.log(JSON.stringify(response));
+        //console.log(JSON.stringify(response));
         return response.content.user.id;
     }
     else if(response.status > 300){
@@ -70,7 +70,7 @@ var data_packer = function(account_number, call_category, phone_number){
                 'raw_subject' : call_category,
                 'requester_id' : find_user(account_number),
                 'status' : 'open',
-                'description' : 'USSD request for call back',
+                'description' : 'USSD request for call back\nAccount number : ' + account_number,
                 'custom_fields' : [
                     {'id' : 360010566873, 'value' : phone_number},
                 ],
