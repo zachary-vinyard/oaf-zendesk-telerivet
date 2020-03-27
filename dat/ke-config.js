@@ -36,10 +36,12 @@ var create_user = function(account_number){
     var response = httpClient.request(opts.url + '/users.json', {
         method : "POST",
         data : JSON.stringify({
-            'name' : 'no id known',
-            'role' : 'end-user',
-            'user_fields' : {
-                'account_number' : account_number
+            'user' : {
+                'name' : 'no id known',
+                'role' : 'end-user',
+                'user_fields' : {
+                    'account_number' : account_number
+                }
             }
         }),
         basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
