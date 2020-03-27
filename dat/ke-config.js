@@ -55,8 +55,8 @@ var data_packer = function(account_number, call_category, phone_number){
                 'custom_fields' : [
                     {'id' : 360010566873, 'value' : phone_number},
                 ],
-            })
-        };
+            }
+        });
     }
     catch(error){
         console.log(error) // placeholder for now so that we don't crash things when it happens
