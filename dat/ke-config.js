@@ -10,12 +10,12 @@ var find_user = function(account_number){
         method : "GET",
         basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
     });
-    if(response.status < 300){
+    if(response.status < 300 & response.status> 200){
         console.log('got a user!!' + response.status);
         console.log(JSON.stringify(response.content.users));
         return response.content.users[0].id;
     }
-    else if(response.status > 300){
+    else{
         console.log('failed at find user ' + response.status +'/ncreating blank user');
         var id = create_user(account_number);
         return id;
