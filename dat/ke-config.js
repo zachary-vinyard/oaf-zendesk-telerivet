@@ -27,12 +27,12 @@ var create_user = function(account_number){
     console.log("createing a user");
     var response = httpClient.request(opts.url + '/users.json', {
         method : "POST",
-        data : {
+        data : JSON.stringify({
             'name' : 'UNIDENTIFIED AN PLEASE UPDATE',
             'user_fields' : {
                 'account_number' : account_number
             }
-        },
+        }),
         basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
     });
     if(response.status < 300){
