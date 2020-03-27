@@ -46,7 +46,7 @@ var create_user = function(account_number){
 
 var data_packer = function(account_number, call_category, phone_number){
     try{
-        return {
+        return JSON.stringify({
             'ticket' : {
                 'subject' : call_category,
                 'raw_subject' : call_category,
@@ -55,7 +55,7 @@ var data_packer = function(account_number, call_category, phone_number){
                 'custom_fields' : [
                     {'id' : 360010566873, 'value' : phone_number},
                 ],
-            }
+            })
         };
     }
     catch(error){
