@@ -3,6 +3,44 @@ config file for Kenya Zendesk set up
 **Store API key as project variable in Telerivet. do no store here.**
 */
 
+//finds a user on KE zendesk. now should create if one is not there
+var find_user = function(account_number){
+    var response = httpClient.request(opts.url + '/users.json?query=account_number:' + account_number, {
+        method : "GET",
+        basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
+    });
+    if(response.status < 300){
+        console.log('got a user!!' + response.status);
+        return response.content.users[0].id;
+    }
+    else if(response.status > 300){
+        console.log('failed at find user ' + response.status +'/ncreating blank user');
+        return create_user(account_number);
+    }
+};
+
+var create_user = function(account_number){
+    var response = httpClient.request(opts.url + '/users.json?query=account_number:' + account_number, {
+        method : "POST",
+        data : {
+            'name' : 'UNIDENTIFIED AN PLEASE UPDATE',
+            'user_fields' : {
+                'account_number' : account_number
+            }
+        },
+        basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
+    });
+    if(response.status < 300){
+        console.log('created a user!!' + response.status);
+        console.log(JSON.stringify(response));
+        return response.content.user.id;
+    }
+    else if(response.status > 300){
+        console.log('failed at find user ' + response.status +'/ncreating blank user');
+        return create_user(account_number);
+    }
+}
+
 var data_packer = function(account_number, call_category, phone_number){
     try{
         return {
@@ -19,21 +57,6 @@ var data_packer = function(account_number, call_category, phone_number){
     }
     catch(error){
         console.log(error) // placeholder for now so that we don't crash things when it happens
-    }
-};
-
-var find_user = function(account_number){
-    var response = httpClient.request(opts.url + '/users.json?query=account_number:' + account_number, {
-        method : "GET",
-        basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
-    });
-    if(response.status < 300){
-        console.log('got a user!!' + response.status);
-        return response.content.users[0].id;
-    }
-    else if(response.status > 300){
-        console.log('failed at find user ' + response.status);
-        return null;
     }
 };
 
