@@ -37,11 +37,11 @@ var find_user = function(account_number){
         method : "GET",
         basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
     });
-    if(response.status < 200){
+    if(response.status < 300){
         console.log('got a user!!' + response.status);
         return response.content.users[0].id;
     }
-    else if(response.status > 400){
+    else if(response.status > 300){
         console.log(response.status);
         return null;
     }
