@@ -33,17 +33,19 @@ var find_user = function(account_number){
 
 var create_user = function(account_number){
     console.log("createing a user");
+    user_dat = JSON.stringify({
+        'user' : {
+            'name' : 'no id known',
+            'role' : 'end-user',
+            'user_fields' : {
+                'account_number' : account_number
+            }
+        }
+    }),
+    console.log(user_dat)
     var response = httpClient.request(opts.url + '/users.json', {
         method : "POST",
-        data : JSON.stringify({
-            'user' : {
-                'name' : 'no id known',
-                'role' : 'end-user',
-                'user_fields' : {
-                    'account_number' : account_number
-                }
-            }
-        }),
+        data : user_dat,
         basicAuth : project.vars.zd_user + '/token:' + project.vars.zd_api_key
     });
     if(response.status < 300){
