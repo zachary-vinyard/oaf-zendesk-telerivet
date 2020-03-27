@@ -50,6 +50,7 @@ var create_user = function(account_number){
     }
     else if(response.status > 300){
         console.log('failed at create user ' + response.status);
+        console.log(response.content);
         return null;
     }
 }
