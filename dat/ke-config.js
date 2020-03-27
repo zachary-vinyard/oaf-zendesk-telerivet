@@ -35,8 +35,9 @@ var create_user = function(account_number){
     console.log("createing a user");
     user_dat = JSON.stringify({
         'user' : {
-            'name' : 'no id known',
+            'name' : 'UNKnOWN USSD CONTACT',
             'role' : 'end-user',
+            'email' : 'unknown@unknown.com',
             'user_fields' : {
                 'account_number' : account_number
             }
