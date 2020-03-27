@@ -6,7 +6,7 @@ config file for Kenya Zendesk set up
 module.exports = opts;
 
 var opts = {
-    'url' : null,
+    'url' : "https://oneacrefund-ke.zendesk.com/api/v2",
     'data_packer' : data_packer,
     'ticket_table' : 'CallBackUSSD', //true as of 26 mar 2020
     'update_table' : true,
