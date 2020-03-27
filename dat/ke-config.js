@@ -36,7 +36,7 @@ var create_user = function(account_number){
     var response = httpClient.request(opts.url + '/users.json', {
         method : "POST",
         data : JSON.stringify({
-            'name' : 'UNIDENTIFIED AN PLEASE UPDATE',
+            'name' : 'no id known',
             'user_fields' : {
                 'account_number' : account_number
             }
