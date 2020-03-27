@@ -24,13 +24,14 @@ var find_user = function(account_number){
         return id;
     }
     else{
-        console.log('failed at find user ' + response.status +'/ncreating blank user');
-        //console.log(JSON.stringify(response.content));
-        var id = create_user(account_number);
-        return id;
+        console.log('failed at find user ' + response.status +'/ not ncreating blank user');
+        //console.log(JSON.stringify(response.content));;
+        return null;
     }
 };
 
+
+//don't use this
 var create_user = function(account_number){
     console.log("createing a user");
     user_dat = JSON.stringify({
