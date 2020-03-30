@@ -84,7 +84,12 @@ var data_packer = function(account_number, call_category, phone_number){
 
 var table_updater = function(account_number, call_category, phone_number, ticket_id){
     var ticket_table = project.getOrCreateDataTable(opts.ticket_table);
-    ticket_table.createRow({vars : {'account_number' : account_number, 'call_category' : call_category, 'phone_number' : phone_number, 'ticket_id' : ticket_id}});
+    ticket_table.createRow({vars : {
+        'account_number' : account_number,
+        'call_category' : call_category,
+        'phone_number' : phone_number,
+        'ticket_id' : ticket_id
+    }});
 };
 
 var opts = {
