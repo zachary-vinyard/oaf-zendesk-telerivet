@@ -78,7 +78,8 @@ var data_packer = function(account_number, call_category, phone_number){
         });
     }
     catch(error){
-        console.log(error) // placeholder for now so that we don't crash things when it happens
+        console.log(error);
+        return {}; // placeholder for now so that we don't crash things when it happens
     }
 };
 
