@@ -63,6 +63,7 @@ var create_user = function(account_number){
 */
 
 var data_packer = function(account_number, call_category, phone_number){
+    phone_number = parseInt(String(phone_number).replace('-','')) || null;
     try{
         return JSON.stringify({
             'ticket' : {
