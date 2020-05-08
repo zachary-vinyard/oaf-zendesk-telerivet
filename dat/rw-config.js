@@ -5,12 +5,12 @@ needs a config function to package custom variables saved as data_packer
 */
 
 var data_packer = data_packer = function(account_number, call_category, phone_number){ //placeholder for now needs update when available
-    return {
+    return JSON.stringify({
         'ticket' : {
             'account_number' : account_number,
             'call_category': call_category
         }
-    };
+    });
 };
 
 module.exports = {
