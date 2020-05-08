@@ -16,7 +16,7 @@ var data_packer = data_packer = function(account_number, call_category, phone_nu
 };
 
 module.exports = {
-    'url' : 'TZ_URL_GOES_HERE',
+    'url' : 'https://oneacrefund-tz.zendesk.com/api/v2',
     'data_packer' : data_packer,
     'ticket_table' : 'ticket_table_name', // placeholder for now - needs update
     'update_table' : false,
