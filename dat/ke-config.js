@@ -62,7 +62,7 @@ var create_user = function(account_number){
 }
 */
 
-var data_packer = function(account_number, call_category, phone_number){
+var data_packer = function(account_number, call_category, phone_number, tags){
     phone_number = parseInt(String(phone_number).replace('-','')) || null;
     try{
         return JSON.stringify({
@@ -75,6 +75,7 @@ var data_packer = function(account_number, call_category, phone_number){
                 'custom_fields' : [
                     {'id' : 360010566873, 'value' : phone_number},
                 ],
+                'tags': tags
             }
         });
     }
